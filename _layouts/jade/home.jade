@@ -3,8 +3,11 @@
 !="---\n"
 
 div.home
+    h1.page-heading
+      | About Me
+      != "{% markdown about.md %}"
   h1.page-heading
-    Posts
+    | Posts
   !="{{ content }}"
   ul.post-list
     !="{% for post in site.posts %}"
@@ -16,6 +19,6 @@ div.home
             !="{{ post.title | escape }}"
     !="{% endfor %}"
   p.rss-subscribe
-    subscribe
+    | subscribe
     a(href!='{{ "/feed.xml" | relative_url }}')
-      via RSS
+      |  via RSS
