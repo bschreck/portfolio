@@ -1,9 +1,0 @@
-doctype html
-html(lang!='{{ page.lang | default: site.lang | default: "en" }}')
-  !="{% include head.html %}"
-  body
-    !="{% include header.html %}"
-    main.page-content(aria-label="Content").toilet-background
-      div.wrapper
-        !="{{ content }}"
-    !="{% include footer.html %}"

@@ -1,4 +1,0 @@
----
-layout: default
----
-<div class="home"><div class="main-container"><img src="assets/bw_headshot.PNG" width="150" class="headshot"/><h1 class="page-heading">{% markdown about.md %}</h1></div><div class="side-container"><h1 class="page-heading">Posts</h1>{{ content }}<ul class="post-list">{% for post in site.posts %}<li><span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span><h2><a href="{{ post.url | relative_url }}" class="post-link">{{ post.title | escape }}</a></h2></li>{% endfor %}</ul><p class="rss-subscribe">subscribe<a href="{{ "/feed.xml" | relative_url }}"> via RSS</a></p></div></div>
