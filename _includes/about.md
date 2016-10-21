@@ -6,17 +6,27 @@ Besides data science and machine learning, I'm into Zen Buddhism, pole vaulting,
 
 My research at MIT focused on data science automation, and specifically,
 on automatically generated and solving meaningful prediction problems
-given arbitrary relational data. This work culminated in my [master's thesis]({{ site.url }}
+given arbitrary relational data. This work culminated in my [master's thesis](
 /assets/MIT_Meng_BenSchreck.pdf)
-as well as a paper in DSAA 2016 titled [What would a data scientist ask?
+as well as a paper in IEEE/ACM DSAA 2016 titled [What would a data scientist ask?
 Automatically formulating and solving prediction
 problems](http://dai.lids.mit.edu/Trane.pdf).
 
-In the past, I worked on automation as applied to massive open online
-courses, or MOOCs
-([link](http://groups.csail.mit.edu/EVO-DesignOpt/groupWebSite/uploads/Main/DSAA___MOOC_paper_tar.pdf)),
-as well as a online matrix-completion algorithms, multiplexed robotic scheduling for liquid-handling robots,
-recipe modification using recurrent neural networks, and scene detection
+Before working on automating prediction problem
+definitions, I built a system to augment human project managers of large scale software
+ projects, requiring automated data transforms of extremely messy data,
+ automated feature engineering, natural language processing of textual
+ comments, and quick configurable selection of various prediction
+ problems. Parts of this system are now in use at one of the largest
+ software consulting firms in the world. Check out the source [here](https://github.com/ML-SELC/endtoend)
+
+ I also helped develop an end-to-end data science foundry
+for MOOCs that enabled a systematic way of going from raw data to predictive models. This work was published in IEEE/ACM DSAA 2015
+([link](http://groups.csail.mit.edu/EVO-DesignOpt/groupWebSite/uploads/Main/DSAA___MOOC_paper_tar.pdf)).
+
+More fun projects include an [implementation](https://github.com/bschreck/near-optimal-online-matrix-prediction) of near-optimal online matrix-completion algorithms (which had previously only existed in math form),
+multiplexed robotic scheduling for liquid-handling robots,
+[recipe modification](https://github.com/bschreck/robo-chef) using recurrent neural networks, and [scene detection](https://github.com/bschreck/scenic-recursion)
 using a combination of convolutional and recurrent neural networks.
 
 
@@ -30,7 +40,8 @@ the illest rapper alive without being "alive"?
 Lil Neuron is an AI rapper using recurrent neural networks. See [Lil
 Neuron Takes His First Breaths]({% post_url
 2016-10-10-lil-neuron-takes-his-first-breaths %}) for my first blog
-about it.
+about it, and the [source](https://github.com/bschreck/lil-neuron) on Github.
+Please let me know if you want to contribute!
 
 ## BSS For Fitness
 
