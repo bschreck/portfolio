@@ -1,4 +1,4 @@
-Cofounder and Chief Data Scientist at FeatureLab.
+Cofounder and Chief Data Scientist at Feature Labs.
 
 Besides data science and machine learning, I'm into Zen Buddhism, pole vaulting, mobility, music, skiing, and generally making a fool of myself through art.
 

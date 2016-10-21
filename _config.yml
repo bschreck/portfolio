@@ -16,10 +16,11 @@
 title: Ben Schreck
 email: benjaminschreck93@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Chief Data Scientist at FeatureLab. This is my playground to publish ideas I have and projects I'm working on.
+  Chief Data Scientist at Feature Labs. This is my playground to publish ideas I have and projects I'm working on.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://benschreck.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  bschreck
+linkedin_username:  benschreck
 
 # Build settings
 markdown: kramdown
