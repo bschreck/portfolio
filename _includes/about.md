@@ -1,5 +1,14 @@
 Cofounder and Chief Data Scientist at [Feature Labs](http://feature-labs.com).
 
+# Work
+
+Feature Labs is a venture-backed startup enabling enterprises to conduct
+and productize data science without hiring additional data scientists.
+We automate and abstract away the complexities of the entire data
+science process so that business executives, domain experts, and
+software engineers can focus on solving business problems instead of
+optimizing complex algorithms or building large data processing systems.
+
 Besides data science and machine learning, I'm into Zen Buddhism, pole vaulting, mobility, music, skiing, and generally making a fool of myself through art.
 
 # Research
