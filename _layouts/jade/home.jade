@@ -13,12 +13,12 @@ div.home
     !="{{ content }}"
     ul.post-list
       !="{% for post in site.posts %}"
-        li
-          span.post-meta
-            !='{{ post.date | date: "%b %-d, %Y" }}'
-          h2
-            a.post-link(href!="{{ post.url | relative_url }}")
-              !="{{ post.title | escape }}"
+      li
+        span.post-meta
+          !='{{ post.date | date: "%b %-d, %Y" }}'
+        h2
+          a.post-link(href!="{{ post.url | relative_url }}")
+            !="{{ post.title | escape }}"
       !="{% endfor %}"
     p.rss-subscribe
       | subscribe

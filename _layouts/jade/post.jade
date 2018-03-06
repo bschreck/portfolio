@@ -16,6 +16,4 @@ article.post(itemscope itemtype="http://schema.org/BlogPosting")
       !="{% endif %}"
   div.post-content(itemprop="articleBody")
     !="{{ content }}"
-  !="{% if site.disqus.shortname %}"
-    !="{% include disqus_comments.html %}"
-  !="{% endif %}"
+  !="{% if site.disqus.shortname %} {% include disqus_comments.html %} {% endif %}"

@@ -18,7 +18,7 @@ module Jekyll
 
     def convert(content)
       begin
-        o, e, s = Open3.capture3("jade", :stdin_data => content)
+        o, e, s = Open3.capture3("pug", :stdin_data => content)
         puts(<<-eos
 Jade Error >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #{e}
@@ -26,8 +26,8 @@ Jade Error >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         eos
         ) if e.length > 0
       rescue Errno::ENOENT => e
-        puts "** ERROR: Jade isn't installed or could not be found."
-        puts "** ERROR: To install with NPM run: npm install jade -g"
+        puts "** ERROR: Pug isn't installed or could not be found."
+        puts "** ERROR: To install with NPM run: npm install pug pug-cli -g"
         return nil
       end
       return o

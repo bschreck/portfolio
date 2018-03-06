@@ -1,3 +1,3 @@
 #!/bin/bash
 
-jade -w -o ../ *.jade
+pug -w -o ../ *.jade

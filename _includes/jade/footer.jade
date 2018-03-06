@@ -5,11 +5,8 @@ footer.site-footer
     div.footer-col-wrapper
       div.footer-col.footer-col-1
         ul.contact-list
-          !="{% if site.email %}"
-            li
-              a(href!="mailto:{{ site.email }}")
-                !="{{ site.email }}"
-          !="{% endif %}"
+          li
+            a(href!="mailto:{{ site.email }}")
       div.footer-col.footer-col-2
         ul.social-media-list
           !="{% if site.github_username %}"
