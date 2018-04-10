@@ -11,10 +11,25 @@ data scientists, and
 software engineers can focus on solving business problems instead of
 computation and academic problems.
 
+## Spotlight
+
+Should building AI products require you to “call in the cavalry” – No
+Read how to engineer data-driven AI products – [“Machine Learning 2.0”](https://www.featuretools.com/wp-content/uploads/2018/03/ml20.pdf)
+
+Delivering on the promise – first AI product built using our automated data science tools (collaboration with Accenture)
+[MIT News](http://news.mit.edu/2018/ml-20-machine-learning-many-data-science-0306) | [“The AI Project Manager” paper](https://www.featuretools.com/wp-content/uploads/2018/03/AIPM.pdf)
+
+[Feature Engineering vs. Feature Selection](https://www.featurelabs.com/blog/feature-engineering-vs-feature-selection/)
+
+[Applying Data Science Automation to Better Predict Credit Card Fraud](https://www.featurelabs.com/blog/predicting-credit-card-fraud/)
+
+
+
 ## Projects we've done that we can talk about
 
  - [Featuretools](https://www.featuretools.com) - the most popular open-source automated feature engineering framework on Github. Backed by DARPA in the [D3M](https://www.darpa.mil/program/data-driven-discovery-of-models) program
  - The [AI Project Manager](https://www.featuretools.com/wp-content/uploads/2018/03/AIPM.pdf) - a collaboration with Accenture that used [ML 2.0](http://news.mit.edu/2018/ml-20-machine-learning-many-data-science-0306) techniques that produced an augmentation tool for software project managers to accurately predict whether projects meet their goals.
+ - Helping [BBVA predict credit card fraud](https://www.featurelabs.com/blog/predicting-credit-card-fraud/) - automated feature engineering and problem-specific optimizations drastically reduce financial implications of fraud.
 
 # Past Research
 
