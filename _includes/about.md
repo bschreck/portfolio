@@ -1,6 +1,6 @@
 Cofounder and Chief Data Scientist at [Feature Labs](https://www.featurelabs.com).
 
-I'm into Zen Buddhism, urban farming, data science & machine learning, pole vaulting, mobility/health/fitness, music, skiing, and generally making a fool of myself through art.
+I'm into Zen Buddhism, urban farming, data science & machine learning, pole vaulting, yoga, mobility/health/fitness, music, skiing, and generally making a fool of myself through art.
 
 # Work
 
@@ -10,6 +10,13 @@ We develop automation and UI tools so that business executives, subject-matter e
 data scientists, and
 software engineers can focus on solving business problems instead of
 computation and academic problems.
+
+## Featuretools
+
+I'm one of the lead developers of Featuretools, the most popular open-source feature engineering library on Github. I've worked on Featuretools since April 2016; read [here](https://www.featurelabs.com/blog/open-sourcing-featuretools/) why in September 2017 we decided to release it publicly.
+Featuretools makes it easy to use feature engineering (both manual and automated) in your data science pipelines by abstracting away low-level computations that have become boiler plate in data science/machine learning applications.
+We've found it increases productivity by at least an order of magnitude, makes for more repeatable and deployable code, and frees up cognitive load on developers so they can focus on high-level problems.
+It uses the Deep Feature Synthesis ([academic paper](https://www.featurelabs.com/wp-content/uploads/2017/12/DSAA_DSM_2015-1.pdf) and [blogpost](https://www.featurelabs.com/blog/deep-feature-synthesis/)) algorithm to automatically generate and compute high-level features from granular, time-varying, multitable data.
 
 ## Spotlight
 
