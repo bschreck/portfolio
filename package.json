@@ -1,0 +1,12 @@
+{
+  "name": "benschreck.com",
+  "version": "1.0.0",
+  "description": "personal website",
+  "main": "task",
+  "repository": "git@github.com:bschreck/bschreck.github.io",
+  "author": "bschreck <benjaminschreck93@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "showdown": "^1.8.7"
+  }
+}

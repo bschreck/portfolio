@@ -1,0 +1,22 @@
+{
+  "theme":       "default",
+  "name":        "Benjamin J. Schreck",
+  "bio":         "That's a very formal name. You can call me Ben. I explore, I work, and I have hobbies.",
+  "description": "Detailed description for search engines.",
+  "host":        "https://bschreck.github.io",
+  "analytics":   "<script type='text/javascript'></script>",
+  "feeds": [
+    { "type": "application/atom+xml", "url": "{{{host}}}/blog/feed.atom"},
+    { "type": "application/rss+xml",  "url": "{{{host}}}/blog/feed.rss"}
+  ],
+  "links": [
+    { "name": "LinkedIn", "symbol": "&#xe252;", "url": "https://www.linkedin.com/in/benschreck" },
+    { "name": "GitHub",   "symbol": "&#xe237;", "url": "http://www.github.com/bschreck" },
+    { "name": "RSS",      "symbol": "&#xe271;", "url": "http://feeds.feedburner.com/lutzroeder" }
+  ],
+  "pages": [
+    { "name": "Blog",     "url": "/",         "visible": true },
+    { "name": "Work Experience", "url": "/work-experience", "visible": true },
+    { "name": "Projects", "url": "/projects", "visible": true }
+  ]
+}

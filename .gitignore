@@ -1,4 +1,10 @@
-_site
-.sass-cache
-.jekyll-metadata
-.bundle
+/build/
+/dist/
+/app
+/debug
+*.pyc
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+node_modules
