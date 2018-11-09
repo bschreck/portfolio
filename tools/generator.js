@@ -440,7 +440,7 @@ function cleanDirectory(directory) {
 var environment = process.env["ENVIRONMENT"];
 console.log("node " + process.version + " " + environment);
 var configuration = JSON.parse(fs.readFileSync("content.json", "utf-8"));
-var destination = "build";
+var destination = "docs";
 var theme = "default";
 configuration["template_path"] = path.resolve("./themes/" + theme)  + "/"
 var args = process.argv.slice(2)
