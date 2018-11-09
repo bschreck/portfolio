@@ -1,0 +1,14 @@
+ <%_ current_page.items.forEach(function(item, i, arr){ -%>
+<div class='item'>
+    <a class='card'>
+        <h1> <%- item.name %></h1>
+        <div class='content'>
+          <% item.listing.forEach(function(elt, i, err){ -%>
+          <ul>
+            <li><%- elt %></li>
+          </ul>
+          <%_ }); -%>
+        </div>
+    </a>
+</div>
+ <%_ }); -%>

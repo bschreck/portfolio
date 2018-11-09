@@ -1,23 +1,31 @@
 <html>
 <head>
-<title>Benjamin J. Schreck's Projects</title>
+<title>Benjamin J. Schreck</title>
+<meta name='description' content='Detailed description for search engines.' />
+<meta name='author' content='Benjamin J. Schreck' />
 <meta http-equiv='content-type' content='text/html; charset=utf-8' />
 <meta name='robots' content='noodp' />
 <meta name='viewport' content='width=device-width, initial-scale=1' />
 <script type='text/javascript'></script>
-<link rel='alternate' type='application/atom+xml' title='Benjamin J. Schreck' href='https://bschreck.github.io/blog/feed.atom' />
-<link rel='alternate' type='application/rss+xml' title='Benjamin J. Schreck' href='https://bschreck.github.io/blog/feed.rss' />
+<link rel='alternate' type='application/atom+xml' title='' href='&lt;%= host %&gt;/blog/feed.atom' />
+<link rel='alternate' type='application/rss+xml' title='' href='&lt;%= host %&gt;/blog/feed.rss' />
 <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700|Merriweather:300,300i,700' />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ovo"/>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+</script>
 
-<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+<link rel='shortcut icon' type='image/x-icon' href='/portrait_small_80d_icon.ico' />
 <link rel='icon' type='image/jpeg' href='/portrait.jpg' />
 <link rel='apple-touch-icon' type='image/jpeg' href='/portrait.jpg' />
 <link rel='apple-touch-icon-precomposed' type='image/jpeg' href='/portrait.jpg' />
 <link rel='fluid-icon' type='image/jpeg' href='/portrait.jpg' />
 
-<style type="text/css">
+<style type='text/css'>
 html {
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+font-family: -apple-system, "Ovo", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 -ms-text-size-adjust: 100%;
 -webkit-text-size-adjust: 100%;
 -webkit-text-rendering: optimizeLegibility;
@@ -38,7 +46,7 @@ body { margin: 0 0 65px 0; background-color: #f8f8f8; }
 .header a.icon { content: attr(title); margin: 0 1px 0 1px; color: #8c8c8c; }
 .header a.icon:link, .header a.icon:visited, .header a.icon:active { text-decoration: none; }
 .header a.icon:hover { color: #333333; text-decoration: none; }
-.header .profile { max-width: 640px; box-sizing: border-box; padding: 45px 20px 48px 20px; margin: 0 auto 0 auto; }
+.header .profile { max-width: 1000px; box-sizing: border-box; padding: 45px 20px 48px 20px; margin: 0 auto 0 auto; }
 .header .profile .name { font-size: 32px; font-weight: bold; margin-left: -2px; }
 .header .profile .bio { font-size: 16px; color: #666666; line-height: 22px; margin-top: 4px; display: block; }
 .header .profile .portrait { float: right; margin-left: 20px; position: relative; }
@@ -46,29 +54,40 @@ body { margin: 0 0 65px 0; background-color: #f8f8f8; }
 .header .profile .portrait img { overflow: hidden; width: 100px; height: 100px; border-radius: 50%; }
 .header .profile .links { font-size: 14px; color: #8f8f8f; padding: 20px 0 0px 0; vertical-align: center; line-height: 25px; height: 26px; }
 .header .symbol { font-family: "Mono Social Icons Font"; font-size: 20px; text-rendering: optimizeLegibility; }
-.header .navigation { box-sizing: border-box; max-width: 640px; margin: 0 auto 0 auto; padding: 0px 20px 0px 20px; }
-.header .navigation .tabs { border-top: 1px solid rgba(0, 0, 0, .05); display: block; flex-direction: row; text-align: left; margin: 0; padding: 15px 0 17px 0; list-style: none; list-style-image: none; font-size: 16px; }
+.header .navigation { box-sizing: border-box; max-width: 1000px; margin: 0 auto 0 auto; padding: 0px 20px 0px 20px; }
+.header .navigation .tabs { border-top: 1px solid rgba(0, 0, 0, .05); display: block; overflow-x: scroll; flex-direction: row; text-align: left; margin: 0; padding: 15px 0 17px 0; list-style: none; list-style-image: none; font-size: 16px; }
 .header .navigation .tab { display: table-cell; text-align: left; letter-spacing: 0; padding-right: 20px; white-space: nowrap; }
 .header .navigation .tab a { color: #8f8f8f; }
 .header .navigation .tab a:hover { color: #666666; }
 .header .navigation .tab a.active { color: #1a1a1a; }
-.item { max-width: 640px; width: auto; margin: 0 auto 15px auto; }
+.header .navigation .scroll-arrow { display: inline; }
+.item { max-width: 1000px; width: auto; margin: 0 auto 15px auto; }
 .card { display: table; width: 100%; box-sizing: border-box; padding: 15px 20px 22px 20px; border-radius: 3px; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, .09); box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .04); color: #333333; background-color: #ffffff; }
 .card .logo { float: left; margin-top: 5px; margin-right: 30px; }
 .card .border { position: relative; border-radius: 3px; box-sizing: border-box; box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1); }
 .card .border:after { content: ''; border-radius: 3px; border: 1px solid rgba(0, 0, 0, .1); position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
 .card .border img { border-radius: 3px; background-clip: border-box; }
 .card a, .item a:visited, .item a:link, .item a:active, .item a:hover { color: inherit; text-decoration: none; }
-.card h1 { display: inline; font-family: "Merriweather Sans", "Open Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; font-weight: bold; font-size: 26px; line-height: 1.32; letter-spacing: -0.06em; margin: 0 0 8px -1.9375px; }
-.card .content { overflow: hidden; font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 300; font-size: 16px; line-height: 1.69; word-break: break-word; word-wrap: break-word; letter-spacing: -0.009em; }
+.card h1 { display: inline; font-family: "Ovo", "Open Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; font-weight: bold; font-size: 26px; line-height: 1.32; letter-spacing: -0.06em; margin: 0 0 8px -1.9375px; }
+.card .content { overflow: hidden; font-family: "Ovo", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 300; font-size: 16px; line-height: 1.69; word-break: break-word; word-wrap: break-word; letter-spacing: -0.009em; }
 .card .content p { margin: 8px 0 8px 0; }
 .card .content p a { background-repeat: repeat-x; background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #333333 50%); background-size: 2px 2px; background-position: 0 1.15em; }
 .card .content ul { margin: 2; }
-.card .date { color: #8f8f8f; float: right; margin-left: 10px; font-size: 12px; line-height: 16px; }
+.card .post-right { float: right; margin-left: 10px; font-size: 12px; line-height: 16px; }
+.card .post-right .date { color: #8f8f8f; }
+.card .post-right .image { position: relative; top: 10px; }
 .card .more { color: #aaaaaa; font-size: 12px; vertical-align: baseline; margin: 1px 0 5px 0; }
+.clickable-card:hover {background-color: rgba(212,212,212,0.3); cursor: pointer;};
+.project-disclaimer p { font-size: 20px }
 .placeholder { box-sizing: border-box; max-width: 640px; padding: 45px 20px 30px 20px; margin: 0 auto 10px auto; }
 .center { box-sizing: border-box; max-width: 640px; padding: 0px 20px 22px 20px; margin: 0 auto 15px auto; }
 .center h1 { font-size: 16px; font-weight: 600; }
+@media all and (max-width: 800px) {
+.header .navigation { box-sizing: border-box; max-width: 800px; margin: 0 auto 0 auto; padding: 0px 20px 0px 20px; }
+.header .profile { max-width: 800px; box-sizing: border-box; padding: 45px 20px 48px 20px; margin: 0 auto 0 auto; }
+.item { max-width: none; width: auto; margin: 0 auto 15px auto; }
+.card { max-width: 800px; width: 100%; padding-left: 20px; padding-right: 20px; margin: 0 auto 0 auto; border-radius: 0; border: 0; box-shadow: none; }
+}
 @media all and (max-width: 767px) {
 .header .profile { padding-top: 36px; padding-bottom: 36px; }
 .header .profile .portrait img { width: 80px; height: 80px;}
@@ -125,30 +144,338 @@ src: url(data:font/opentype;base64,d09GRgABAAAAABysABEAAAAALgQAAQAAAAAAAAAAAAAAA
 <div class='profile'>
 <a class='portrait' href='/'><img src='/portrait.jpg' /></a>
 <div class='name'><a href='/'>Benjamin J. Schreck</a></div>
-<div class='bio'>That's a very formal name. You can call me Ben. I explore, I work, and I have hobbies.</div>
+<div class='bio'>You can call me Ben. Deeply experienced in end-to-end data science using Python, but I consider myself a generalist. Venturing deep into robotics. Against sitting in chairs. Keeping beginner&#39;s mind as best as I can.</div>
 <div class='links'>
-<a class='icon' target='_blank' href='https://www.linkedin.com/in/benschreck' title='LinkedIn'><span class='symbol'>&#xe252;</span></a>
-<a class='icon' target='_blank' href='http://www.github.com/bschreck' title='GitHub'><span class='symbol'>&#xe237;</span></a>
-<a class='icon' target='_blank' href='http://feeds.feedburner.com/lutzroeder' title='RSS'><span class='symbol'>&#xe271;</span></a>
+<a class='icon' target='_blank' href='https://www.linkedin.com/in/benschreck' title='Benjamin J. Schreck'><span class='symbol'>&#xe252;</span></a>
+<a class='icon' target='_blank' href='http://www.github.com/bschreck' title='Benjamin J. Schreck'><span class='symbol'>&#xe237;</span></a>
 </div>
 </div>
 <nav class='navigation'>
 <ul class='tabs' id='tabs'>
-<li class='tab'><a href='/'>Blog</a></li>
-<li class='tab'><a href='/work-experience'>Work Experience</a></li>
-<li class='tab'><a class='active'href='/projects'>Projects</a></li>
+  <li class='tab'>
+    <a  href='/work-experience'>Work Experience</a>
+ </li>
+  <li class='tab'>
+    <a  href='/education'>Education</a>
+ </li>
+  <li class='tab'>
+    <a class='active' href='/projects'>Projects</a>
+ </li>
+  <li class='tab'>
+    <a  href='/blog'>Blog</a>
+ </li>
+  <li class='tab'>
+    <a  href='/open-source-contributions'>Open Source</a>
+ </li>
+  <li class='tab'>
+    <a  href='/publications'>Publications &amp; White Papers</a>
+ </li>
+  <li class='tab'>
+    <a  href='/public-speaking'>Public Speaking</a>
+ </li>
+  <li class='tab'>
+    <a  href='/hard-skills'>Technical Skills</a>
+ </li>
+  <li class='tab'>
+    <a  href='/soft-skills'>Non-Technical Skills</a>
+ </li>
+  <li class='tab'>
+    <a  href='/non-technical-experience'>Experience (Non-Technical)</a>
+ </li>
+  <li class='tab'>
+    <a  href='/technical-awards'>Awards (Technical)</a>
+ </li>
+  <li class='tab'>
+    <a  href='/non-technical-awards'>Awards (Non-Technical)</a>
+ </li>
+  <li class='tab'>
+    <a  href='/habits'>Habits</a>
+ </li>
 </ul>
 </nav>
 </div>
+
+<div class="item project-disclaimer">
+<p>Most of these are technical projects whose code is stored on my own Github account. For all of them, I did all or a significant portion of the work.</p>
+</div>
+
 <div class='item'>
-    <div class='card'>
-        <div class='logo'><img src='example.png' width='160' height='160' /></div>
-        <h1>Example Project</h1>
+    <div class='card clickable-card' data-link=" https://github.com/Featuretools/featuretools/commits?author=bschreck">
+        <div class='logo'><img src=' featuretools-logo.png' width='160' /></div>
+        <h1> Featuretools</h1>
+        <h3> Feature engineering in Python</h3>
+        <p><b>Contributors:</b>  Many, see 'contributors' tab on Github (click this card to go to the Github repository).</p>
+        <p><b>Date:</b>  2016-2018</p>
         <div class='content'>
-            <p>The terms foobar, or foo and others like "First Object Oriented" and "Binary Arbitrary Reason" are used as placeholder names 
-            in computer programming or computer-related documentation. They have been used to name entities such as variables...</p>
+          <p> Provides a language to express complex, composable features on top of relational time-varying data, an efficient multithreaded engine to compute these features at particular points in time (scalable to clusters using Dask or PySpark), and algorithms for automatically generating the list of features (e.g. Deep Feature Synthesis). I was the first user, a lead developer since 2016, and helped in its transition from closed to open source in 2017.</p>
+          
+              <p><b>Recognition:</b>  Most popular feature engineering library on Github with over 2400 stars as of November 2018. Stack Overflow tag.</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/Featuretools/featuretools/commits?author=bschreck.</p>
         </div>
     </div>
 </div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://www.featuretools.com/wp-content/uploads/2018/03/AIPM.pdf">
+        <div class='logo'><img src=' aipm.jpg' width='160' /></div>
+        <h1> AI Project Manager</h1>
+        <h3> Deployed Predictive Analytics for Large Software Projects (collab. with Accenture)</h3>
+        <p><b>Contributors:</b>  Kalyan Veeramachaneni (MIT & Feature Labs), Sarvesh Damle (Accenture), Rajendra Prasad (Accenture), Shankar Mallapur (Accenture)</p>
+        <p><b>Date:</b>  2015-2018</p>
+        <div class='content'>
+          <p> <ul><li>Multi-year effort to deploy a system at Accenture that augments project managers by predicting the degree to which projects' future metrics will be on target.</li><li>Developed deployment-focused machine learning workflow that translated to many other projects at Feature Labs.</li><li>Succesfully deployed, continually tested, and periodically updated by Accenture engineers since September 2018.</li><li>Knowledge transfer of necessary machine learning concepts and skills to novice engineers at Accenture Bangalore.</li><li>One of first machine learning projects actually used internally at Accenture.</li></ul></p>
+          
+              <p><b>Recognition:</b>  Published in IEEE Big Data 2018. Deployed at Accenture.</p>
+          
+          <p>Note: this clickable card redirects to  https://www.featuretools.com/wp-content/uploads/2018/03/AIPM.pdf.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://gitlab.com/datadrivendiscovery">
+        <div class='logo'><img src=' darpa.jpeg' width='160' /></div>
+        <h1> DARPA D3M TA2 System</h1>
+        <h3> </h3>
+        <p><b>Contributors:</b>  Members of Feature Labs and the MIT Data-to-AI Lab, along with Carles Sala.</p>
+        <p><b>Date:</b>  2017-2018</p>
+        <div class='content'>
+          <p> D3M (Data-Driven Discovery of Models) is a multiyear 25+MM project/competition. TA2 systems automatically solve image, audio, text, tabular, relational, time-series, graph, recommendation, and other data science problems. They also interface with TA1 components (data science primitives) and TA3 systems (UIs). Our entry used open-source tools we developed such as [GET LINKS] MLBlocks (automatic pipeline generation), Featuretools (feature engineering system), and BTB (copula-based hyperparameter optimizer). We consistently handled all dataset types. I contributed heavily to our handling of image, text, relational, time-series, graph, & recommendation problems, and integrating with TA1 primitives. Note: system not public. Link redirects to D3M Gitlab page.</p>
+          
+              <p><b>Recognition:</b>  Consistently in top 2 at integration events, depending on metric, while I was a member</p>
+          
+          <p>Note: this clickable card redirects to  https://gitlab.com/datadrivendiscovery.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://github.com/Featuretools/ta1-primitives">
+        <div class='logo'><img src=' darpa.jpeg' width='160' /></div>
+        <h1> DARPA D3M TA1 Primitives</h1>
+        <h3> </h3>
+        <p><b>Contributors:</b>  Members of Feature Labs and the MIT Data-to-AI Lab, along with Carles Sala.</p>
+        <p><b>Date:</b>  2017-2018</p>
+        <div class='content'>
+          <p> D3M (Data-Driven Discovery of Models) is a multiyear 25+MM project/competition. TA1 primitives are individual data science components that can be accessed by TA2 and TA3 systems. I was the lead developer of our TA1 entries, including a primitive for applying Featuretools and Random Forest-based feature selection. I also helped debug JPL's Scikit-Learn (CHECK SPELLING) primitives.</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/Featuretools/ta1-primitives.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://github.com/bschreck/lil-neuron">
+        <div class='logo'><img src=' ' width='160' /></div>
+        <h1> Lil Neuron</h1>
+        <h3> NLP Lyric Generation</h3>
+        <p><b>Contributors:</b>  </p>
+        <p><b>Date:</b>  2016-2017</p>
+        <div class='content'>
+          <p> Recurrent neural networks trained on rap lyrics. Used a novel method incorporating word pronunciations to embed rhyme schemes. See Blog tab for more details [NEED TOP ADD LINKS TO THESE]</p>
+          
+              <p><b>Recognition:</b>  AI Grant Finalist</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/bschreck/lil-neuron.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://github.com/Featuretools/DL-DB">
+        <div class='logo'><img src=' dldb_fig.png' width='160' /></div>
+        <h1> DLDB</h1>
+        <h3> Deep Learning for Databases</h3>
+        <p><b>Contributors:</b>  Kalyan Veeramachaneni</p>
+        <p><b>Date:</b>  2018</p>
+        <div class='content'>
+          <p> High-level API to apply deep learning to tabular data. incorporates cutoff times to preserve label leakage. Automatically embeds sparse categorical variables into a dense numeric representation. Parameterized architecture allows interoperability with Keras. Several demos available <a href='https://github.com/Featuretools/DLDB-Demos'>here</a>.</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/Featuretools/DL-DB.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://www.media.mit.edu/posts/build-a-food-computer">
+        <div class='logo'><img src=' pfc.jpg' width='160' /></div>
+        <h1> Personal Food Computer</h1>
+        <h3> Hydroponic vegetable & herb growing system</h3>
+        <p><b>Contributors:</b>  </p>
+        <p><b>Date:</b>  2018</p>
+        <div class='content'>
+          <p> This is inspired by the MIT Media Lab Open Agriculture Project, and specifically a low-cost version discussed on an associate forum. I use several devices (such as a Raspberry Pi) to measure and control variables like temperature & humidity. Eventually I want to see how many variables I can automate and control.</p>
+          
+          <p>Note: this clickable card redirects to  https://www.media.mit.edu/posts/build-a-food-computer.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://github.com/Featuretools/predict-malicious-cyber-connections">
+        <div class='logo'><img src=' featuretools-logo.png' width='160' /></div>
+        <h1> Predicting Malicious Cyber Connections</h1>
+        <h3> Featuretools demo for MIT Lincoln Labs.</h3>
+        <p><b>Contributors:</b>  </p>
+        <p><b>Date:</b>  2018</p>
+        <div class='content'>
+          <p> Applies Featuretools to cybersecurity dataset to build features and predict malicious web traffic in advance</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/Featuretools/predict-malicious-cyber-connections.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://github.com/HDI-Project/Trane">
+        <div class='logo'><img src=' https://dai.lids.mit.edu/wp-content/uploads/2018/06/Trane-logo-300x180.jpg' width='160' /></div>
+        <h1> Trane</h1>
+        <h3> A Language to Express Predictive Problems (Part of Master's Thesis)</h3>
+        <p><b>Contributors:</b>  Kalyan Veeramachaneni, Alex Nordin, Lei Xu, & Albert Carter</p>
+        <p><b>Date:</b>  2016</p>
+        <div class='content'>
+          <p> Reminiscent of one late, great jazz saxophonist, this project allows anyone (including machines) to improvise over data. It includes a novel language to express <i>prediction problems</i> over datasets, and an interpreter to convert those problems into code. In my thesis, I used an early version of Featuretools in combination with Scikit-Learn to automatcally generate and solve thousands of these problems. While I am no longer actively contributing work is ongoing with current students in the MIT Data-to-AI lab. Note that Github link is the most recent repository, which was heavily refactored from my original work and thus does not show my contributions directly. Please click the card to see the published paper.</p>
+          
+              <p><b>Recognition:</b>  Published in IEEE DSAA 2016</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/HDI-Project/Trane.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" ">
+        <div class='logo'><img src=' dailab.png' width='160' /></div>
+        <h1> Pernican</h1>
+        <h3> A machine learning system to recommend meaningful prediction problems depending on the dataset and user (Part of Master's Thesis)</h3>
+        <p><b>Contributors:</b>  Kalyan Veeramachaneni</p>
+        <p><b>Date:</b>  2016</p>
+        <div class='content'>
+          <p> Recommender system to learn and suggest <i>meaningful</i> prediction problems from arbitrary datasets. I developed a system that translate Trane problems into human-readable sentences, and a UI that allows humans to rank randomly generated problems based on how meaningful they think they are. Pernican uses these rankings as labeled data and generates features from each dataset. Features include statistical information about the dataset, as well as semantic clusters using Word2Vec topic models on the names of columns. It also generates an exhaustive list of possible prediction problems using a subset Trane. This is nontrivial because datasets have different numbers of columns and different numbers of possible prediction problems. Finally, the system uses both implicit low-rank matrix features as well as explicit extracted features to rank each possible prediction problem and return an ordered list. Users can provide feedback and the system will update its internal model. Note: project showed promising early results but needed more data to reach strong conclusions. Note: url not provided because project is not currently public</p>
+          
+          <p>Note: this clickable card redirects to  .</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://github.com/bschreck/near-optimal-online-matrix-prediction">
+        <div class='logo'><img src=' ' width='160' /></div>
+        <h1> Online Matrix Prediction Implementation</h1>
+        <h3> Final project for MIT 6.883 Online Methods in Machine Learning</h3>
+        <p><b>Contributors:</b>  </p>
+        <p><b>Date:</b>  2016</p>
+        <div class='content'>
+          <p> Implemented a theoretically near-optimal online algorithm in Julia and Python to predict unknown values in a matrix according to a low local-trace norm heuristic.</p>
+          
+              <p><b>Recognition:</b>  Open Source Contribution: first implementation of algorithm</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/bschreck/near-optimal-online-matrix-prediction.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://github.com/bschreck/robo-chef">
+        <div class='logo'><img src=' ' width='160' /></div>
+        <h1> Robo-Chef</h1>
+        <h3> NLP Recipe Suggestions</h3>
+        <p><b>Contributors:</b>  Nico Rakover, Ambika Krishnamachar</p>
+        <p><b>Date:</b>  2015</p>
+        <div class='content'>
+          <p> Using an attention-based recurrent neural network, built a system that gathered recipes and associated comments from websites, isolated refinements within comments and placed them within the referenced location in the recipe text.</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/bschreck/robo-chef.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://github.com/bschreck/scenic-recursion">
+        <div class='logo'><img src=' ' width='160' /></div>
+        <h1> Scenic-Recursion</h1>
+        <h3> Computer Vision Scene Detection</h3>
+        <p><b>Contributors:</b>  </p>
+        <p><b>Date:</b>  2015</p>
+        <div class='content'>
+          <p> Combined convolutional neural networks and recurrent neural networks to identify objects in scenes. Discovered a bug in Tensor Flow's data input feeders that did not sort inputs correctly (see these Stack Overflow questions: {GET LINKS}). Note: project unfinished because Tensor Flow lacked implementations for several gradient update steps I needed for backpropagation. I did not have time in the final weeks of the semester to implement these.</p>
+          
+              <p><b>Recognition:</b>  Open Source Contribution: Tensor Flow</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/bschreck/scenic-recursion.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://github.com/bschreck/gesture-drone">
+        <div class='logo'><img src=' gesture_drone.png' width='160' /></div>
+        <h1> Gesture-controlled quadcopter using FPGA & Kinect</h1>
+        <h3> Final project for MIT 6.111 Digital System Lab</h3>
+        <p><b>Contributors:</b>  Lee Gross</p>
+        <p><b>Date:</b>  2014</p>
+        <div class='content'>
+          <p> Built a gesture-controlled FPGA-based quadcopter system, where users hand movements were translated into controls through a Microsoft Kinect and an FPGA and remotely sent to a quadcopter. Video available <a href='https://www.youtube.com/watch?v=dd0SS1pb_2U'>here</a>.</p>
+          
+              <p><b>Recognition:</b>  Recognition: MIT EECS Northern Telecom/BNR Project Award for Best Undergraduate Laboratory Project</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/bschreck/gesture-drone.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://github.com/MOOCdb">
+        <div class='logo'><img src=' dailab.png' width='160' /></div>
+        <h1> MOOCdb: Data Science Foundry for MOOCs</h1>
+        <h3> </h3>
+        <p><b>Contributors:</b>  Sebastien Boyer, Ben Gelman, Kalyan Veeramachaneni.</p>
+        <p><b>Date:</b>  2015</p>
+        <div class='content'>
+          <p> System to allow many different courses and educational providers to generate high-level features for their MOOC data and predict student dropout at any phase in the course.</p>
+          
+              <p><b>Recognition:</b>  Published in IEEE DSAA 2015</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/MOOCdb.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://github.com/bschreck/ez-anti-coordination">
+        <div class='logo'><img src=' ' width='160' /></div>
+        <h1> Anti-Coordination of Multiple Smart Agents Around a Simple Signal</h1>
+        <h3> Final project for MIT 16.412j Cognitive Robotics</h3>
+        <p><b>Contributors:</b>  Lee Gross, Matthew Susskind</p>
+        <p><b>Date:</b>  2015</p>
+        <div class='content'>
+          <p> Implementation for Arduino-based agents of <a href='https://arxiv.org/pdf/1402.0583.pdf'>this</a> paper for Arduino-based agents.</p>
+          
+          <p>Note: this clickable card redirects to  https://github.com/bschreck/ez-anti-coordination.</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" ">
+        <div class='logo'><img src=' ' width='160' /></div>
+        <h1> Multicore, multilevel cache, branch-predicting, pipelined processor</h1>
+        <h3> Final project for MIT 6.175 Constructive Computer Architecture</h3>
+        <p><b>Contributors:</b>  </p>
+        <p><b>Date:</b>  2014</p>
+        <div class='content'>
+          <p> Implemented in Bluespec on an FPGA</p>
+          
+          <p>Note: this clickable card redirects to  .</p>
+        </div>
+    </div>
+</div>
+<div class='item'>
+    <div class='card clickable-card' data-link=" https://bitbucket.org/jbabb/biocad/src/default/">
+        <div class='logo'><img src=' weiss-lab.gif' width='160' /></div>
+        <h1> Scheduling for Liquid-Handling Robot Automation</h1>
+        <h3> Project for MIT SuperUROP program in the Weiss Lab for Synthetic Biology</h3>
+        <p><b>Contributors:</b>  Jonathan Babb, Felix Sun</p>
+        <p><b>Date:</b>  2014</p>
+        <div class='content'>
+          <p> Developed a scheduling system to automate wet lab research using operating systems principles to execute multiple tasks concurrently on liquid-handling robots. Developed user-facing front-end for biologists</p>
+          
+              <p><b>Recognition:</b>  Publication: IWBDA 2014</p>
+          
+          <p>Note: this clickable card redirects to  https://bitbucket.org/jbabb/biocad/src/default/.</p>
+        </div>
+    </div>
+</div>
+
+<script>$(".clickable-card").click(function(){
+  window.location = $(this).data("link");
+  return false
+});
+</script>
 </body>
 </html>

@@ -1,0 +1,18 @@
+<div class='item'>
+<p class='subtitle'>These are projects whose code is <i>not</i> on my own Github account.</p>
+<p class='subsubtitle'>Projects stored on my Github are listed in the "Projects" tab.</p>
+<p class='subsubtitle'>Note: I have included projects for which I contributed issues, even though I may not have committed code into their master branches. Many times these issues led to changes in the master branch by other contributors. Furthermore, I want to showcase my usage & understanding of them.</p>
+<p class='subsubtitle'>When available, links reference either a single issue/pull request/other contribution, or my commit history</p>
+</div>
+ <%_ current_page.items.forEach(function(item, i, arr){ -%>
+<div class='item'>
+    <div class='card clickable-card' href=" <%= item.url %>">
+        <div class='logo'><img src=' <%= item.image %>' width='160' /></div>
+        <h1> <%- item.name %></h1>
+        <div class='content'>
+          <p> <%- item.description %></p>
+          <p>Note: this clickable card redirects to  <%= item.url %>.</p>
+        </div>
+    </div>
+</div>
+ <%_ }); -%>

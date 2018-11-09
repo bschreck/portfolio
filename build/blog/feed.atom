@@ -3,8 +3,77 @@
 <title>Benjamin J. Schreck</title>
 <id>https://bschreck.github.io/</id>
 <icon>https://bschreck.github.io/favicon.ico</icon>
-<updated>2018-11-04T12:04:38Z</updated>
+<updated>2018-03-20T20:00:00Z</updated>
 <author><name>Benjamin J. Schreck</name></author>
 <link rel='alternate' type='text/html' href='https://bschreck.github.io/' />
 <link rel='self' type='application/atom+xml' href='https://bschreck.github.io/blog/feed.atom' />
+<entry>
+<id>https://bschreck.github.io/blog/2018-03-20-what-is-ml-2-0/</id>
+<ul>
+  <li>
+    <author><name>false</name></author>
+  </li>
+</ul>
+<published>2018-03-20T20:00:00Z</published>
+<updated>2018-03-20T20:00:00Z</updated>
+<title type='text'>What Is Machine Learning 2.0?</title>
+<content type='html'>&lt;p&gt;(External post: featurelabs.com)&lt;&#x2F;p&gt;
+</content>
+<link rel='alternate' type='text/html' href='https://bschreck.github.io/blog/2018-03-20-what-is-ml-2-0/' title='What Is Machine Learning 2.0?' />
+</entry>
+<entry>
+<id>https://bschreck.github.io/blog/2018-03-06-getting-value-from-machine-learning-isnt-about-fancier-algorithms-its-about-making-it-easier-to-use/</id>
+<ul>
+  <li>
+    <author><name>false</name></author>
+  </li>
+</ul>
+<published>2018-03-06T20:00:00Z</published>
+<updated>2018-03-06T20:00:00Z</updated>
+<title type='text'>Getting Value from Machine Learning Isn’t About Fancier Algorithms — It’s About Making It Easier to Use</title>
+<content type='html'>&lt;p&gt;(External post: hbr.org)&lt;&#x2F;p&gt;
+</content>
+<link rel='alternate' type='text/html' href='https://bschreck.github.io/blog/2018-03-06-getting-value-from-machine-learning-isnt-about-fancier-algorithms-its-about-making-it-easier-to-use/' title='Getting Value from Machine Learning Isn’t About Fancier Algorithms — It’s About Making It Easier to Use' />
+</entry>
+<entry>
+<id>https://bschreck.github.io/blog/2018-01-02-feature-engineering-vs-feature-selection/</id>
+<ul>
+  <li>
+    <author><name>false</name></author>
+  </li>
+</ul>
+<published>2018-01-02T20:00:00Z</published>
+<updated>2018-01-02T20:00:00Z</updated>
+<title type='text'>Feature Engineering vs Feature Selection</title>
+<content type='html'>&lt;p&gt;(External post: featurelabs.com)&lt;&#x2F;p&gt;
+</content>
+<link rel='alternate' type='text/html' href='https://bschreck.github.io/blog/2018-01-02-feature-engineering-vs-feature-selection/' title='Feature Engineering vs Feature Selection' />
+</entry>
+<entry>
+<id>https://bschreck.github.io/blog/2017-10-25-predicting-credit-card-fraud/</id>
+<ul>
+  <li>
+    <author><name>false</name></author>
+  </li>
+</ul>
+<published>2017-10-25T20:00:00Z</published>
+<updated>2017-10-25T20:00:00Z</updated>
+<title type='text'>Applying Data Science Automation to Better Predict Credit Card Fraud</title>
+<content type='html'>&lt;p&gt;(External post: featurelabs.com)&lt;&#x2F;p&gt;
+</content>
+<link rel='alternate' type='text/html' href='https://bschreck.github.io/blog/2017-10-25-predicting-credit-card-fraud/' title='Applying Data Science Automation to Better Predict Credit Card Fraud' />
+</entry>
+<entry>
+<id>https://bschreck.github.io/blog/2016-10-10-lil-neuron-takes-his-first-breaths/</id>
+<ul>
+  <li>
+    <author><name>false</name></author>
+  </li>
+</ul>
+<published>2016-10-10T20:00:00Z</published>
+<updated>2016-10-10T20:00:00Z</updated>
+<title type='text'>A Rapper Is Born</title>
+<content type='html'></content>
+<link rel='alternate' type='text/html' href='https://bschreck.github.io/blog/2016-10-10-lil-neuron-takes-his-first-breaths/' title='A Rapper Is Born' />
+</entry>
 </feed>

@@ -2,6 +2,7 @@
 state:      post
 title:      A Rapper Is Born
 date:       2016-10-10 12:00:00 -08:00
+image:      portrait-small.jpg
 ---
 
 

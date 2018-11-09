@@ -7,6 +7,10 @@ var fs = require("fs");
 var http = require("http");
 var path = require("path");
 var process = require("process");
+//TODO: no longer need get
+var get = require("lodash/get");
+var ejs = require("ejs");
+var path = require("path");
 
 var entityMap = {
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;", "/": "&#x2F;", "`": "&#x60;", "=": "&#x3D;"
@@ -27,9 +31,11 @@ function merge() {
 }
 
 function mustache(template, view, partials) {
+    // more complicated lodash get() function allows us to access more precise elements of view dynamically
+    // currently just used for arrays within the current_page: get(view, "current_page.items") becomes view["current_page"]["items"]
     template = template.replace(/{{#\s*([-_\/\.\w]+)\s*}}\s?([\s\S]*){{\/\1}}\s?/gm, function (match, name, content) {
-        if (name in view) {
-            var section = view[name];
+        var section = get(view, name, null);
+        if (section) {
             if (Array.isArray(section) && section.length > 0) {
                 return section.map(item => mustache(content, merge(view, item), partials)).join("");
             }
@@ -42,12 +48,14 @@ function mustache(template, view, partials) {
     template = template.replace(/{{>\s*([-_\/\.\w]+)\s*}}/gm, function (match, name) {
         return mustache(typeof partials === "function" ? partials(name) : partials[name], view, partials);
     });
+
+
     template = template.replace(/{{{\s*([-_\/\.\w]+)\s*}}}/gm, function (match, name) {
-        var value = view[name];
+        var value = get(view, name, null);
         return mustache(typeof value === "function" ? value() : value, view, partials);
     });
     template = template.replace(/{{\s*([-_\/\.\w]+)\s*}}/gm, function (match, name) {
-        var value = view[name];
+        var value = get(view, name, null);
         return escapeHtml(typeof value === "function" ? value() : value);
     });
     return template;
@@ -145,7 +153,7 @@ function loadPost(file) {
     if (fs.existsSync(file) && !fs.statSync(file).isDirectory()) {
         var data = fs.readFileSync(file, "utf-8");
         if (data) {
-            var item = {};
+            var item = {"redirect_url": null};
             var content = [];
             var metadata = -1;
             var lines = data.split(/\r\n?|\n/g);
@@ -181,19 +189,17 @@ function loadPost(file) {
 function posts() {
     return fs.readdirSync("content/blog/").filter(post => fs.statSync("content/blog/" + post).isDirectory() && fs.existsSync("content/blog/" + post + "/index.md")).sort().reverse();
 }
-    //return fs.readdirSync("content/blog/").filter(post => fs.statSync("content/blog/" + post).isDirectory() && (
-    //    fs.existsSync("content/blog/" + post + "/index.md") || fs.existsSync("content/blog/" + post + "/index.html"))).sort().reverse();
 
 function renderBlog(folders, root, page) {
-    var view = { "items": [] }
+    var view = { "items": [],
+                 "template_path": configuration["template_path"]}
     var count = 10;
     while (count > 0 && folders.length > 0) {
         var folder = folders.shift();
 
-        //var item = loadPost("content/blog/" + folder + "/index.html");
         var item = loadPost("content/blog/" + folder + "/index.md");
         if (item && (item["state"] === "post" || environment !== "production")) {
-            item["url"] = "blog/" + folder + "/";
+            item["url"] = item["redirect_url"] || "blog/" + folder + "/";
             if ("date" in item) {
                 var date = new Date(item["date"].split(/ \+| \-/)[0] + "Z");
                 item["date"] = formatDate(date, "user");
@@ -216,8 +222,9 @@ function renderBlog(folders, root, page) {
         var data = renderBlog(folders, root, page);
         fs.writeFileSync(destination, data);
     }
-    var template = fs.readFileSync("themes/" + theme + "/feed.html", "utf-8");
-    return mustache(template, view, null);
+    var template = fs.readFileSync(view["template_path"] + "feed.ejs", "utf-8");
+    var options = {}
+    return ejs.render(template, view, options);
 }
 
 function renderFeed(source, destination) {
@@ -231,14 +238,15 @@ function renderFeed(source, destination) {
         "author": configuration["name"],
         "host": host,
         "url": url,
-        "items": []
+        "items": [],
+        "template_path": configuration["template_path"]
     };
     var folders = posts();
     var recentFound = false;
     var recent = new Date();
     while (folders.length > 0 && count > 0) {
         var folder = folders.shift();
-        var item = loadPost("content/blog/" + folder + "/index.html");
+        var item = loadPost("content/blog/" + folder + "/index.md");
         if (item && (item["state"] === "post" || environment !== "production")) {
             item["url"] = host + "/blog/" + folder + "/";
             if (!item["author"] || item["author"] === configuration["name"]) {
@@ -257,20 +265,28 @@ function renderFeed(source, destination) {
                     recentFound = true;
                 }
             }
+            if (folder == "2017-01-01-welcome") {
+              //console.log(truncate(item["content"], 10000));
+              //console.log(escapeHtml(truncate(item["content"], 10000)));
+            }
             item["content"] = escapeHtml(truncate(item["content"], 10000));
+            //item["content"] = truncate(item["content"], 10000);
             feed["items"].push(item);
             count--;
         }
     }
     feed["updated"] = formatDate(recent, format);
-    var template = fs.readFileSync(source, "utf-8");
-    var data = mustache(template, feed, null);
-    fs.writeFileSync(destination, data);
+    var options = {}
+    ejs.renderFile(source, feed, options, function(err, str){
+        //console.log(feed["items"]);
+        //console.log("=============================");
+        //console.log(str);
+        fs.writeFileSync(destination, str);
+    });
 }
 
 function renderPost(source, destination) {
-    if (source.startsWith("content/blog/") && (
-            source.endsWith("/index.html") || source.endsWith("/index.md"))) {
+    if (source.startsWith("content/blog/") && source.endsWith("/index.md")) {
         var item = loadPost(source);
         if (item) {
             if ("date" in item) {
@@ -279,26 +295,27 @@ function renderPost(source, destination) {
             }
             item["author"] = item["author"] || configuration["name"];
             var view = merge(configuration, item);
-            var template = fs.readFileSync("themes/" + theme + "/post.html", "utf-8");
-            var data = mustache(template, view, function(name) {
-                return fs.readFileSync("themes/" + theme + "/" + name, "utf-8");
+
+            var options = {}
+            ejs.renderFile(view["template_path"] + "post.ejs", view, options, function(err, str){
+                if (err) {
+                  throw err;
+                }
+                fs.writeFileSync(destination.replace(".md", ".html"), str);
             });
-            fs.writeFileSync(destination.replace(".md", ".html"), data);
             return true;
         }
     }
     return false;
 }
 
-function renderPage(source, destination) {
+function renderPage(source, destination, from_outline) {
     if (renderPost(source, destination)) {
         return;
     }
-    var template = fs.readFileSync(source, "utf-8");
     var view = merge(configuration);
 
-    view["blog"] = function() {
-        return renderBlog(posts(), path.dirname(destination), 0) + `<script type='text/javascript'>
+    view["blog"] = renderBlog(posts(), path.dirname(destination), 0) + `<script type='text/javascript'>
 function updateStream() {
     var element = document.getElementById("stream");
     if (element) {
@@ -325,18 +342,35 @@ window.addEventListener('scroll', function(e) {
 });
 </script>
 `
-    };
+    if (source == "content/index.ejs") {
+      var first_page = source.replace("/index.ejs", configuration["pages"][0]["url"] + "/index.ejs")
+      return renderPage(first_page, destination, from_outline)
+    }
     view["pages"] = [];
     configuration["pages"].forEach(function (page) {
         var active = ("content" + page["url"]).replace(/\/$/, "") == path.dirname(source)
+        if (active) {
+          view["current_page"] = page;
+        }
         if (active || page["visible"]) {
-            view["pages"].push({ "name": page["name"], "url": page["url"], "active": active });
+            view["pages"].push({ "name": page["name"], "url": page["url"], "active": active});
         }
     });
-    var data = mustache(template, view, function(name) {
-        return fs.readFileSync("themes/" + theme + "/" + name, "utf-8");
-    });
-    fs.writeFileSync(destination, data);
+    var options = {}
+    var template = fs.readFileSync(source, "utf-8");
+    var subpage = ejs.render(template, view, options);
+    if (from_outline) {
+      view["current_page"] = subpage
+      ejs.renderFile(configuration["template_path"] + "page_outline.ejs", view, options, function(err, str){
+          if (err) {
+            console.log(err);
+            throw err;
+          }
+          fs.writeFileSync(destination, str);
+      });
+    } else {
+      fs.writeFileSync(destination, subpage);
+    }
 }
 
 function renderFile(source, destination) {
@@ -351,8 +385,12 @@ function render(source, destination) {
             renderFeed(source, destination);
             break;
         case ".md":
-        case ".html":
-            renderPage(source, destination);
+            renderPage(source, destination.replace(".ejs", ".html").replace(".md", ".html"),
+                       false);
+            break;
+        case ".ejs":
+            renderPage(source, destination.replace(".ejs", ".html").replace(".md", ".html"),
+                       !source.endsWith("404.ejs"));
             break;
         default:
             renderFile(source, destination);
@@ -404,6 +442,7 @@ console.log("node " + process.version + " " + environment);
 var configuration = JSON.parse(fs.readFileSync("content.json", "utf-8"));
 var destination = "build";
 var theme = "default";
+configuration["template_path"] = path.resolve("./themes/" + theme)  + "/"
 var args = process.argv.slice(2)
 while (args.length > 0) {
     var arg = args.shift();
