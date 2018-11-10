@@ -10,8 +10,10 @@
     { "type": "application/rss+xml",  "url": "<%= host %>/blog/feed.rss"}
   ],
   "links": [
-    { "name": "LinkedIn", "symbol": "&#xe252;", "url": "https://www.linkedin.com/in/benschreck" },
-    { "name": "GitHub",   "symbol": "&#xe237;", "url": "http://www.github.com/bschreck" }
+    { "name": "LinkedIn", "type": "symbol", "symbol": "&#xe252;", "url": "https://www.linkedin.com/in/benschreck" },
+    { "name": "GitHub", "type": "symbol", "symbol": "&#xe237;", "url": "http://www.github.com/bschreck" },
+    { "name": "Stack Overflow", "type": "image", "image": "https://stackoverflow.com/users/flair/2002890.png", "url": "https://stackoverflow.com/users/2002890/bschreck"},
+    { "name": "Gitlab", "type": "image", "image": "gitlab_logo.svg",  "url": "https://gitlab.com/users/bschreck" }
   ],
   "pages": [
     { "name": "Work Experience", "url": "/work-experience", "visible": true,

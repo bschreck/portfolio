@@ -33,4 +33,12 @@ Preserve spot of horizontal scrollbar when click item
 Brief intro to blogs are missing
 
 
-LINKS SEEM BROKEN, AND HOMEPAGE / DOES NOT WORK
+
+TRANE METNIONS LINK TO PUBLISHED PAPER BUT DOES NOT REDIRECT. FIND PAPER ONLINE
+
+Align icons to bottom of text in header links
+Put back in portrait border
+Read more... in blog posts should be in same link as the external link note
+Add back in feed
+bottom placeholder thing in blog
+format lil neuron post better and finish it

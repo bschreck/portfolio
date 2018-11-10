@@ -7,10 +7,9 @@ var fs = require("fs");
 var http = require("http");
 var path = require("path");
 var process = require("process");
-//TODO: no longer need get
-var get = require("lodash/get");
 var ejs = require("ejs");
 var path = require("path");
+var less = require('less');
 
 var entityMap = {
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;", "/": "&#x2F;", "`": "&#x60;", "=": "&#x3D;"
@@ -28,37 +27,6 @@ function merge() {
         target = Object.assign(target, arguments[i]);
     }
     return target;
-}
-
-function mustache(template, view, partials) {
-    // more complicated lodash get() function allows us to access more precise elements of view dynamically
-    // currently just used for arrays within the current_page: get(view, "current_page.items") becomes view["current_page"]["items"]
-    template = template.replace(/{{#\s*([-_\/\.\w]+)\s*}}\s?([\s\S]*){{\/\1}}\s?/gm, function (match, name, content) {
-        var section = get(view, name, null);
-        if (section) {
-            if (Array.isArray(section) && section.length > 0) {
-                return section.map(item => mustache(content, merge(view, item), partials)).join("");
-            }
-            if (typeof(section) === "boolean" && section) {
-                return mustache(content, view, partials);
-            }
-        }
-        return "";
-    });
-    template = template.replace(/{{>\s*([-_\/\.\w]+)\s*}}/gm, function (match, name) {
-        return mustache(typeof partials === "function" ? partials(name) : partials[name], view, partials);
-    });
-
-
-    template = template.replace(/{{{\s*([-_\/\.\w]+)\s*}}}/gm, function (match, name) {
-        var value = get(view, name, null);
-        return mustache(typeof value === "function" ? value() : value, view, partials);
-    });
-    template = template.replace(/{{\s*([-_\/\.\w]+)\s*}}/gm, function (match, name) {
-        var value = get(view, name, null);
-        return escapeHtml(typeof value === "function" ? value() : value);
-    });
-    return template;
 }
 
 function formatDate(date, format) {
@@ -192,23 +160,24 @@ function posts() {
 
 function renderBlog(folders, root, page) {
     var view = { "items": [],
-                 "template_path": configuration["template_path"]}
+                 "template_path": configuration["template_path"],
+                 "css_path": "../../site.css"}
     var count = 10;
     while (count > 0 && folders.length > 0) {
         var folder = folders.shift();
 
         var item = loadPost("content/blog/" + folder + "/index.md");
         if (item && (item["state"] === "post" || environment !== "production")) {
-            item["url"] = item["redirect_url"] || "blog/" + folder + "/";
+            item["url"] = item["redirect_url"] || folder + "/";
             if ("date" in item) {
                 var date = new Date(item["date"].split(/ \+| \-/)[0] + "Z");
                 item["date"] = formatDate(date, "user");
             }
             var content = item["content"];
-            content = content.replace(/\s\s/g, " ");
-            var truncated = truncate(content, 250);
+            var truncated = content.split("<!more>")[0];
+            //var truncated = truncate(content, 250);
             item["content"] = truncated;
-            item["more"] = truncated != content;
+            //item["more"] = truncated != content;
             view["items"].push(item);
             count--;
         }
@@ -239,7 +208,8 @@ function renderFeed(source, destination) {
         "host": host,
         "url": url,
         "items": [],
-        "template_path": configuration["template_path"]
+        "template_path": configuration["template_path"],
+        "css_path": "../site.css"
     };
     var folders = posts();
     var recentFound = false;
@@ -265,10 +235,6 @@ function renderFeed(source, destination) {
                     recentFound = true;
                 }
             }
-            if (folder == "2017-01-01-welcome") {
-              //console.log(truncate(item["content"], 10000));
-              //console.log(escapeHtml(truncate(item["content"], 10000)));
-            }
             item["content"] = escapeHtml(truncate(item["content"], 10000));
             //item["content"] = truncate(item["content"], 10000);
             feed["items"].push(item);
@@ -278,9 +244,6 @@ function renderFeed(source, destination) {
     feed["updated"] = formatDate(recent, format);
     var options = {}
     ejs.renderFile(source, feed, options, function(err, str){
-        //console.log(feed["items"]);
-        //console.log("=============================");
-        //console.log(str);
         fs.writeFileSync(destination, str);
     });
 }
@@ -315,7 +278,8 @@ function renderPage(source, destination, from_outline) {
     }
     var view = merge(configuration);
 
-    view["blog"] = renderBlog(posts(), path.dirname(destination), 0) + `<script type='text/javascript'>
+    view["blog"] = renderBlog(posts(), path.dirname(destination), 0)
+    /* view["blog"] += `<script type='text/javascript'>
 function updateStream() {
     var element = document.getElementById("stream");
     if (element) {
@@ -341,7 +305,7 @@ window.addEventListener('scroll', function(e) {
     updateStream();
 });
 </script>
-`
+`*/
     if (source == "content/index.ejs") {
       var first_page = source.replace("/index.ejs", configuration["pages"][0]["url"] + "/index.ejs")
       return renderPage(first_page, destination, from_outline)
@@ -360,6 +324,9 @@ window.addEventListener('scroll', function(e) {
     var template = fs.readFileSync(source, "utf-8");
     var subpage = ejs.render(template, view, options);
     if (from_outline) {
+      if (destination.split("/").length > 3) {
+        view["css_path"] = "../site.css"
+      }
       view["current_page"] = subpage
       ejs.renderFile(configuration["template_path"] + "page_outline.ejs", view, options, function(err, str){
           if (err) {
@@ -385,11 +352,11 @@ function render(source, destination) {
             renderFeed(source, destination);
             break;
         case ".md":
-            renderPage(source, destination.replace(".ejs", ".html").replace(".md", ".html"),
+            renderPage(source, destination.replace(".md", ".html"),
                        false);
             break;
         case ".ejs":
-            renderPage(source, destination.replace(".ejs", ".html").replace(".md", ".html"),
+            renderPage(source, destination.replace(".ejs", ".html"),
                        !source.endsWith("404.ejs"));
             break;
         default:
@@ -407,7 +374,6 @@ function makeDirectory(directory) {
         return current;
     }, '');
 }
-
 function renderDirectory(source, destination) {
     makeDirectory(destination);
     fs.readdirSync(source).forEach(function(item) {
@@ -436,14 +402,24 @@ function cleanDirectory(directory) {
         });
     }
 }
+function renderLess(source, destination) {
+  var less_str = fs.readFileSync(source, "utf-8");
+  less.render(less_str, function (e, css) {
+    if (e) {
+      console.log(e);
+    }
+    fs.writeFileSync(destination, css['css']);
+  });
+}
 
 var environment = process.env["ENVIRONMENT"];
 console.log("node " + process.version + " " + environment);
 var configuration = JSON.parse(fs.readFileSync("content.json", "utf-8"));
 var destination = "build";
 var theme = "default";
-configuration["template_path"] = path.resolve("./themes/" + theme)  + "/"
-var args = process.argv.slice(2)
+configuration["template_path"] = path.resolve("./themes/" + theme)  + "/";
+configuration["css_path"] = "site.css"
+var args = process.argv.slice(2);
 while (args.length > 0) {
     var arg = args.shift();
     if (arg == "--theme" && args.length > 0) {
@@ -454,4 +430,10 @@ while (args.length > 0) {
     }
 }
 cleanDirectory(destination);
+var destination_css_file = destination + "/site.css";
+destination_css_file = path.resolve(destination_css_file);
+var current_dir = process.cwd();
+process.chdir(configuration["template_path"]);
+renderLess("site.less", destination_css_file);
+process.chdir(current_dir);
 renderDirectory("content/", destination + "/");

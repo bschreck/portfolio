@@ -8,7 +8,9 @@ image:      portrait-small.jpg
 
 ## Lil' Neuron Takes His First Few Chaotic, Rectified Breaths
 
-Three verses in and I realized I was in way over my head. The rap game is an endurance sport, and the ones at the top started running years ago. But as a former collegiate pole vaulter, I never cared much for seeing how fast I could run circle. Much more to fun to see how high you can fling yourself with a flexible stick. So I quickly threw away my dreams of becoming a professional rapper, and decided to see how high I could jump using a recurrent neural network, some GPUs, and a whole lot of data.
+Three verses in and I realized I was in way over my head. The rap game is an endurance sport, and the ones at the top started running years ago.
+
+<!more> But as a former collegiate pole vaulter, I never cared much for seeing how fast I could run circle. Much more to fun to see how high you can fling yourself with a flexible stick. So I quickly threw away my dreams of becoming a professional rapper, and decided to see how high I could jump using a recurrent neural network, some GPUs, and a whole lot of data.
 
 ### Neuron's Humble Beginnings
 

@@ -1,18 +1,19 @@
 <%_ items.forEach(function(item, i, arr){ -%>
   <div class='item'>
-  <div class='card clickable-card' data-link="<%= item.url %>">
+  <div class='card'>
     <div class="post-right">
-      <div class='date'><%= item.date %></div>
       <div class='image'><img src="<%= item.image %>" width='160'/></div>
+      <div class='date'><%= item.date %></div>
     </div>
-    <h1><%= item.title %></h1>
+    <!--<h1><%= /*item.title*/ %></h1>-->
   <div class='content'>
     <%- item.content %>
   </div>
+  <div class='more'><a href='<%= item.url %>'>Read more&hellip;</a></div>
   </div>
   </div>
 <%_ }); -%>
-<%_ placeholder.forEach(function(placeholder, i, arr){ -%>
+<%_ if (placeholder) { -%>
   <div class='placeholder' id='stream' title='<%= placeholder.url %>'>
       <div style='background: #eeeeee; width: 80px; height: 9px; float: right;'></div>
       <div style='background: #eeeeee; width: 240px; height: 16px; margin-bottom: 26px;'></div>
@@ -20,4 +21,4 @@
       <div style='background: #eeeeee; max-width: 100%; height: 12px; margin-bottom: 15px;'></div>
       <div style='background: #eeeeee; max-width: 80%; height: 12px; margin-bottom: 15px;'></div>
   </div>
-<%_ }); -%>
+<%_ }; -%>
