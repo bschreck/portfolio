@@ -3,7 +3,7 @@ state:        post
 title:        Getting Value from Machine Learning Isn’t About Fancier Algorithms — It’s About Making It Easier to Use
 date:         2018-03-06 12:00:00 -08:00
 redirect_url: https://hbr.org/2018/03/getting-value-from-machine-learning-isnt-about-fancier-algorithms-its-about-making-it-easier-to-use
-image:        hbr.png
+image:        /hbr.png
 ---
 
 ## Getting Value from Machine Learning Isn’t About Fancier Algorithms — It’s About Making It Easier to Use

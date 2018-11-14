@@ -3,7 +3,7 @@ state:        post
 title:        What Is Machine Learning 2.0?
 date:         2018-03-20 12:00:00 -08:00
 redirect_url: https://www.featurelabs.com/blog/what-is-ml-2-0/
-image:        featurelabs-logo.jpg
+image:        /featurelabs-logo.jpg
 ---
 
 ## What Is Machine Learning 2.0?

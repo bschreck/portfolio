@@ -6,7 +6,7 @@
 </div>
  <%_ current_page.items.forEach(function(item, i, arr){ -%>
 <div class='item'>
-    <div class='card clickable-card' href=" <%= item.url %>">
+    <div class='card clickable-card' data-link=" <%= item.url %>">
         <div class='logo'><img src=' <%= item.image %>' width='160' /></div>
         <h1> <%- item.name %></h1>
         <div class='content'>

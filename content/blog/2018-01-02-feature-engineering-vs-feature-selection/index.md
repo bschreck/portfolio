@@ -3,7 +3,7 @@ state:        post
 title:        Feature Engineering vs Feature Selection
 date:         2018-01-02 12:00:00 -08:00
 redirect_url: https://www.featurelabs.com/blog/feature-engineering-vs-feature-selection/
-image:        featurelabs-logo.jpg
+image:        /featurelabs-logo.jpg
 ---
 
 ## Feature Engineering vs Feature Selection

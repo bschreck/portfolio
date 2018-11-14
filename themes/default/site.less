@@ -1,4 +1,22 @@
 @import "themes/default/header";
+@tan: #e6e1c4;
+@tan: #ffeede;
+@darker-tan: #fffdf0;
+@darker-tan: ##fffcf5;
+
+@lighter-tan: #fffef5;
+
+@lighter-tan: ##fcfff5;
+
+@offwhite1: #fffffc;
+@offwhite2: #fefffc;
+@offwhite3: ##fffefc;
+@gray1: #fffffe;
+@background-color: @offwhite1;
+@card-color: @white;
+@card-highlight-color: @gray1;
+@old-background-color: #fff6ef;
+@background-image: url("brilliant.png");
 
 html {
 font-family: -apple-system, "Ovo", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -14,9 +32,9 @@ font-family: -apple-system, "Ovo", BlinkMacSystemFont, "Segoe UI", Roboto, Oxyge
 -o-font-smoothing: antialiased;
 font-smoothing: antialiased;
 }
-body { margin: 0 0 65px 0; background-color: #f8f8f8; }
+body { margin: 0 0 65px 0; background-color: @background-color; background-image: @background-image;}
 .item { max-width: 1000px; width: auto; margin: 0 auto 15px auto; }
-.card { display: table; width: 100%; box-sizing: border-box; padding: 15px 20px 22px 20px; border-radius: 3px; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, .09); box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .04); color: #333333; background-color: #ffffff; }
+.card { display: table; width: 100%; box-sizing: border-box; padding: 15px 20px 22px 20px; border-radius: 3px; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, .09); box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .04); color: #333333; background-color: @card-color; }
 .card .logo { float: left; margin-top: 5px; margin-right: 30px; }
 .card .border { position: relative; border-radius: 3px; box-sizing: border-box; box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1); }
 .card .border:after { content: ''; border-radius: 3px; border: 1px solid rgba(0, 0, 0, .1); position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
@@ -31,7 +49,7 @@ body { margin: 0 0 65px 0; background-color: #f8f8f8; }
 .card .post-right .date { color: #8f8f8f; font-size: 20px; margin-left: 20px; margin-top: 40px; }
 .card .post-right .image { position: relative; top: 20px; }
 .card .more { color: #8f8f8f; font-size: 18px; vertical-align: baseline; margin: 1px 0 5px 0; }
-.clickable-card:hover {background-color: rgba(212,212,212,0.3); cursor: pointer;};
+.clickable-card:hover {background-color: @card-highlight-color; cursor: pointer;};
 .project-disclaimer p { font-size: 20px }
 .placeholder { box-sizing: border-box; max-width: 640px; padding: 45px 20px 30px 20px; margin: 0 auto 10px auto; }
 .center { box-sizing: border-box; max-width: 640px; padding: 0px 20px 22px 20px; margin: 0 auto 15px auto; }

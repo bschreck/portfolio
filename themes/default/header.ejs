@@ -20,7 +20,7 @@
             <% } else {if (link.type == "html") { %>
               <%- link.html %>
             <% } else {if (link.type == "image") { %>
-              <a class='icon' title='<= name %>'href="<%- link.url %>">
+              <a class='icon' title='<%= name %>' href="<%- link.url %>">
                 <span class='symbol'><img src="<%- link.image %>" height="16px" />
                 </span>
                 <span class='symbol name'><%-link.name%></span>

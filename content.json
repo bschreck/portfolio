@@ -1,7 +1,7 @@
 {
   "theme":       "default",
   "name":        "Benjamin J. Schreck",
-  "bio":         "You can call me Ben. Deeply experienced in end-to-end data science using Python, but I consider myself a generalist. Venturing deep into robotics. Against sitting in chairs. Keeping beginner's mind as best as I can.",
+  "bio":         "Ben for short. Deeply experienced in end-to-end data science using Python, but I consider myself a generalist. Deeply excited about autonomy and cryptocurency (disjointly). Standing up out of chairs whenever possible. Keeping beginner's mind as best as I can.",
   "description": "Detailed description for search engines.",
   "host":        "https://bschreck.github.io",
   "analytics":   "<script type='text/javascript'></script>",
@@ -13,13 +13,13 @@
     { "name": "LinkedIn", "type": "symbol", "symbol": "&#xe252;", "url": "https://www.linkedin.com/in/benschreck" },
     { "name": "GitHub", "type": "symbol", "symbol": "&#xe237;", "url": "http://www.github.com/bschreck" },
     { "name": "Stack Overflow", "type": "image", "image": "https://stackoverflow.com/users/flair/2002890.png", "url": "https://stackoverflow.com/users/2002890/bschreck"},
-    { "name": "Gitlab", "type": "image", "image": "gitlab_logo.svg",  "url": "https://gitlab.com/users/bschreck" }
+    { "name": "Gitlab", "type": "image", "image": "/gitlab_logo.svg",  "url": "https://gitlab.com/users/bschreck" }
   ],
   "pages": [
     { "name": "Work Experience", "url": "/work-experience", "visible": true,
       "items": [
       {"name": "Feature Labs",
-       "image": "featurelabs-logo.jpg",
+       "image": "/featurelabs-logo.jpg",
        "years": "2016 - 2018",
        "title": "Co-Founder & Chief Data Scientist",
        "url": "https://featurelabs.com",
@@ -71,10 +71,10 @@
             "name": "Programs/Partnerships/Customers",
             "info": "These are some of Feature Labs' publicly disclosed programs & customers, or users of software produced by Feature Labs.",
             "subitems": [
-              {"name": "DARPA D3M", "logo": "darpa.jpeg", "url": "https://www.darpa.mil/program/data-driven-discovery-of-models"},
-              {"name": "MIT STEX25", "logo": "stex.png", "url": "http://startupexchange.mit.edu/startupexchange/html/index.html#stex25"},
-              {"name": "BBVA", "logo": "bbva.png", "url": "https://www.bbva.com/en/us/"},
-              {"name": "Accenture", "logo": "accenture.jpeg", "url": "https://www.accenture.com"}
+              {"name": "DARPA D3M", "logo": "/darpa.jpeg", "url": "https://www.darpa.mil/program/data-driven-discovery-of-models"},
+              {"name": "MIT STEX25", "logo": "/stex.png", "url": "http://startupexchange.mit.edu/startupexchange/html/index.html#stex25"},
+              {"name": "BBVA", "logo": "/bbva.png", "url": "https://www.bbva.com/en/us/"},
+              {"name": "Accenture", "logo": "/accenture.jpeg", "url": "https://www.accenture.com"}
             ]
           },
 
@@ -99,7 +99,7 @@
           "masters_thesis": "Towards an Automatic Predictive Question Formulation",
           "undergrad_year": 2015,
           "undergrad_degree": "<b>S.B.</b> Electrical Engineering and Computer Science",
-          "logo": "mit.png",
+          "logo": "/mit.png",
           "years": "2011-2016"
     },
     { "name": "Projects", "url": "/projects", "visible": true ,
@@ -107,7 +107,7 @@
         {
           "name": "Featuretools",
           "subtitle": "Feature engineering in Python",
-          "image": "featuretools-logo.png",
+          "image": "/featuretools-logo.png",
           "description": "Provides a language to express complex, composable features on top of relational time-varying data, an efficient multithreaded engine to compute these features at particular points in time (scalable to clusters using Dask or PySpark), and algorithms for automatically generating the list of features (e.g. Deep Feature Synthesis). I was the first user, a lead developer since 2016, and helped in its transition from closed to open source in 2017.",
           "url": "https://github.com/Featuretools/featuretools/commits?author=bschreck",
           "contributors": "Many, see 'contributors' tab on Github (click this card to go to the Github repository).",
@@ -117,7 +117,7 @@
         {
           "name": "AI Project Manager",
           "subtitle": "Deployed Predictive Analytics for Large Software Projects (collab. with Accenture)",
-          "image": "aipm.jpg",
+          "image": "/aipm.jpg",
           "description": "<ul><li>Multi-year effort to deploy a system at Accenture that augments project managers by predicting the degree to which projects' future metrics will be on target.</li><li>Developed deployment-focused machine learning workflow that translated to many other projects at Feature Labs.</li><li>Succesfully deployed, continually tested, and periodically updated by Accenture engineers since September 2018.</li><li>Knowledge transfer of necessary machine learning concepts and skills to novice engineers at Accenture Bangalore.</li><li>One of first machine learning projects actually used internally at Accenture.</li></ul>",
           "url": "https://www.featuretools.com/wp-content/uploads/2018/03/AIPM.pdf",
           "contributors": "Kalyan Veeramachaneni (MIT & Feature Labs), Sarvesh Damle (Accenture), Rajendra Prasad (Accenture), Shankar Mallapur (Accenture)",
@@ -127,7 +127,7 @@
         {
             "name": "DARPA D3M TA2 System",
             "subtitle": "",
-            "image": "darpa.jpeg",
+            "image": "/darpa.jpeg",
             "description": "D3M (Data-Driven Discovery of Models) is a multiyear 25+MM project/competition. TA2 systems automatically solve image, audio, text, tabular, relational, time-series, graph, recommendation, and other data science problems. They also interface with TA1 components (data science primitives) and TA3 systems (UIs). Our entry used open-source tools we developed such as [GET LINKS] MLBlocks (automatic pipeline generation), Featuretools (feature engineering system), and BTB (copula-based hyperparameter optimizer). We consistently handled all dataset types. I contributed heavily to our handling of image, text, relational, time-series, graph, & recommendation problems, and integrating with TA1 primitives. Note: system not public. Link redirects to D3M Gitlab page.",
             "url": "https://gitlab.com/datadrivendiscovery",
             "contributors": "Members of Feature Labs and the MIT Data-to-AI Lab, along with Carles Sala.",
@@ -137,7 +137,7 @@
         {
             "name": "DARPA D3M TA1 Primitives",
             "subtitle": "",
-            "image": "darpa.jpeg",
+            "image": "/darpa.jpeg",
             "description": "D3M (Data-Driven Discovery of Models) is a multiyear 25+MM project/competition. TA1 primitives are individual data science components that can be accessed by TA2 and TA3 systems. I was the lead developer of our TA1 entries, including a primitive for applying Featuretools and Random Forest-based feature selection. I also helped debug JPL's Scikit-Learn (CHECK SPELLING) primitives.",
             "url": "https://github.com/Featuretools/ta1-primitives",
             "contributors": "Members of Feature Labs and the MIT Data-to-AI Lab, along with Carles Sala.",
@@ -157,7 +157,7 @@
         {
           "name": "DLDB",
           "subtitle": "Deep Learning for Databases",
-          "image": "dldb_fig.png",
+          "image": "/dldb_fig.png",
           "description": "High-level API to apply deep learning to tabular data. incorporates cutoff times to preserve label leakage. Automatically embeds sparse categorical variables into a dense numeric representation. Parameterized architecture allows interoperability with Keras. Several demos available <a href='https://github.com/Featuretools/DLDB-Demos'>here</a>.",
           "url": "https://github.com/Featuretools/DL-DB",
           "contributors": "Kalyan Veeramachaneni",
@@ -167,7 +167,7 @@
         {
             "name": "Personal Food Computer",
             "subtitle": "Hydroponic vegetable & herb growing system",
-            "image": "pfc.jpg",
+            "image": "/pfc.jpg",
             "description": "This is inspired by the MIT Media Lab Open Agriculture Project, and specifically a low-cost version discussed on an associate forum. I use several devices (such as a Raspberry Pi) to measure and control variables like temperature & humidity. Eventually I want to see how many variables I can automate and control.",
             "url": "https://www.media.mit.edu/posts/build-a-food-computer",
             "contributors": "",
@@ -178,7 +178,7 @@
           "name": "Predicting Malicious Cyber Connections",
           "subtitle": "Featuretools demo for MIT Lincoln Labs.",
           "url": "https://github.com/Featuretools/predict-malicious-cyber-connections",
-          "image": "featuretools-logo.png",
+          "image": "/featuretools-logo.png",
           "description": "Applies Featuretools to cybersecurity dataset to build features and predict malicious web traffic in advance",
           "contributors": "",
           "date": "2018",
@@ -198,7 +198,7 @@
           "name": "Pernican",
           "subtitle": "A machine learning system to recommend meaningful prediction problems depending on the dataset and user (Part of Master's Thesis)",
           "url": "",
-          "image": "dailab.png",
+          "image": "/dailab.png",
           "description": "Recommender system to learn and suggest <i>meaningful</i> prediction problems from arbitrary datasets. I developed a system that translate Trane problems into human-readable sentences, and a UI that allows humans to rank randomly generated problems based on how meaningful they think they are. Pernican uses these rankings as labeled data and generates features from each dataset. Features include statistical information about the dataset, as well as semantic clusters using Word2Vec topic models on the names of columns. It also generates an exhaustive list of possible prediction problems using a subset Trane. This is nontrivial because datasets have different numbers of columns and different numbers of possible prediction problems. Finally, the system uses both implicit low-rank matrix features as well as explicit extracted features to rank each possible prediction problem and return an ordered list. Users can provide feedback and the system will update its internal model. Note: project showed promising early results but needed more data to reach strong conclusions. Note: url not provided because project is not currently public",
           "contributors": "Kalyan Veeramachaneni",
           "date": "2016",
@@ -238,7 +238,7 @@
           "name": "Gesture-controlled quadcopter using FPGA & Kinect",
           "subtitle": "Final project for MIT 6.111 Digital System Lab",
           "url": "https://github.com/bschreck/gesture-drone",
-          "image": "gesture_drone.png",
+          "image": "/gesture_drone.png",
           "description": "Built a gesture-controlled FPGA-based quadcopter system, where users hand movements were translated into controls through a Microsoft Kinect and an FPGA and remotely sent to a quadcopter. Video available <a href='https://www.youtube.com/watch?v=dd0SS1pb_2U'>here</a>.",
           "contributors": "Lee Gross",
           "date": "2014",
@@ -248,7 +248,7 @@
           "name": "MOOCdb: Data Science Foundry for MOOCs",
           "subtitle": "",
           "url": "https://github.com/MOOCdb",
-          "image": "dailab.png",
+          "image": "/dailab.png",
           "description": "System to allow many different courses and educational providers to generate high-level features for their MOOC data and predict student dropout at any phase in the course.",
           "contributors": "Sebastien Boyer, Ben Gelman, Kalyan Veeramachaneni.",
           "date": "2015",
@@ -278,7 +278,7 @@
           "name": "Scheduling for Liquid-Handling Robot Automation",
           "subtitle": "Project for MIT SuperUROP program in the Weiss Lab for Synthetic Biology",
           "url": "https://bitbucket.org/jbabb/biocad/src/default/",
-          "image": "weiss-lab.gif",
+          "image": "/weiss-lab.gif",
           "description": "Developed a scheduling system to automate wet lab research using operating systems principles to execute multiple tasks concurrently on liquid-handling robots. Developed user-facing front-end for biologists",
           "contributors": "Jonathan Babb, Felix Sun",
           "date": "2014",
@@ -290,37 +290,37 @@
       "items": [{
           "name": "Featuretools",
           "url": "https://github.com/Featuretools/featuretools/commits?author=bschreck",
-          "image": "featuretools-logo.png",
+          "image": "/featuretools-logo.png",
           "description": "Core contributor. See Projects tab for more information."
         },
         {
           "name": "Dask/Distributed",
           "url": "https://github.com/dask/distributed/commits?author=bschreck",
-          "image": "dask.png",
+          "image": "/dask.png",
           "description": "Distributed computation in Python. Provided several bug fixes and feature implementations."
         },
         {
           "name": "Dask-EC2",
           "url": "https://github.com/dask/dask-ec2/commits?author=bschreck",
-          "image": "dask.png",
+          "image": "/dask.png",
           "description": "Automatic deployment of Dask program to Amazon EC2 cluster. Several commits."
         },
         {
           "name": "D3M",
           "url": "https://gitlab.com/datadrivendiscovery",
-          "image": "darpa.jpeg",
+          "image": "/darpa.jpeg",
           "description": "Central storage location for shared D3M code. Implemented features & bug fixes, posted issues in multiple repositories."
         },
         {
           "name": "Pandas",
           "url": "https://github.com/pandas-dev/pandas/issues/12430",
-          "image": "pandas-logo.png",
+          "image": "/pandas-logo.png",
           "description": "Data processing in Python. Proposed Cython-optimized versions of expanding aggregation functions (which I had implemented locally)."
         },
         {
           "name": "Tensor Flow",
           "url": "https://stackoverflow.com/search?q=user%3A2002890+tensorflow",
-          "image": "tensorflow.png",
+          "image": "/tensorflow.png",
           "description": "Neural networks in Python and C++. Early after the initial release, I posted an issue about a bug/feature request on Github, and asked/resolved several fundamental questions on Stack Overflow."
         },
         {
@@ -344,37 +344,37 @@
         {
           "name": "Dask/fastparquet",
           "url": "https://github.com/dask/fastparquet/issues?utf8=%E2%9C%93&q=is%3Aissue+bschreck",
-          "image": "dask.png",
+          "image": "/dask.png",
           "description": "Python Parquet filetype reader/writer. Found bugs which led to changes in master branch"
         },
         {
           "name": "MLBlocks",
           "url": "https://github.com/HDI-Project/MLBlocks",
-          "image": "mlblocks.png",
+          "image": "/mlblocks.png",
           "description": "While I didn't explicitly contribute code, I contributed ideas about architecture and the way the system learns."
         },
         {
           "name": "HDI Model Provenance Json Metadata",
           "url": "https://github.com/HDI-Project/model-provenance-json",
-          "image": "hdi.jpeg",
+          "image": "/hdi.jpeg",
           "description": "A specification for the construction of a model provenance file that keeps track of the journey from raw data to deployed model in Machine Learning 2.0 projects."
         },
         {
           "name": "HDI Trane",
           "url": "https://github.com/HDI-Project/Trane",
-          "image": "trane.jpeg",
+          "image": "/trane.jpeg",
           "description": "Language to express prediction problems. Did not directly contribute code to latest version on Github, but original work was part of my master's thesis and led to a publication. See <a href='/projects'>Projects</a> for more details."
         },
         {
           "name": "Predicting Malicious Cyber Connections",
           "url": "https://github.com/Featuretools/predict-malicious-cyber-connections",
-          "image": "featuretools-logo.png",
+          "image": "/featuretools-logo.png",
           "description": "Applies Featuretools to cybersecurity dataset to build features and predict malicious web traffic in advance."
         },
         {
           "name": "MOOCdb",
           "url": "https://github.com/MOOCdb",
-          "image": "dailab.png",
+          "image": "/dailab.png",
           "description": "Data Science Foundry for MOOCS. Works across educational MOOC providers to generate complex features that can be used, for instance, to predict dropout."
         }
       ]
@@ -385,7 +385,7 @@
           "title": "The AI Project Manager",
           "abstract": "In this paper we describe a system to augment human project managers of large scale software projects by predicting future SLA violations, using a machine learning approach. We detail the way we collected, processed, and formatted the data from a much larger database ill-suited for the problem at hand. We then detail how we extracted training examples through prediction engineering, as well as our semi-automated feature engineering approach. Our system was able to achieve a false positive rate of .311, compared to a non-machine learning baseline of and a simple machine learning baseline without feature engineering scoring .689 and .723 respectively...",
           "publication": "IEEE International Conference on Big Data",
-          "image": "bigdata2018.jpg",
+          "image": "/bigdata2018.jpg",
           "year": "2018",
           "authors": "Benjamin Schreck, Shankar Mallapur, Sarvesh Damle, Nitin John James, Sanjeev Vohra, Rajendra Prasad, Kalyan Veeramachaneni",
           "link": "https://www.featuretools.com/wp-content/uploads/2018/03/AIPM.pdf",
@@ -434,42 +434,42 @@
           "talkname": "MIT ILP Innovation Symposium with Wuxi",
           "location": "Wuxi, China",
           "date": "2018",
-          "image": "mitilp.png",
+          "image": "/mitilp.png",
           "description": "Presented Feature Labs' mission/goals to Chinese business leaders & government officials"
         },
         {
           "talkname": "DARPA D3M Integration Event",
           "location": "Arlington, VA",
           "date": "2018",
-          "image": "darpa.jpeg",
+          "image": "/darpa.jpeg",
           "description": "Presented Feature Labs/MIT team's system"
         },
         {
           "talkname": "DARPA D3M Integration Event",
           "location": "Arlington, VA",
           "date": "2017",
-          "image": "darpa.jpeg",
+          "image": "/darpa.jpeg",
           "description": "Presented Feature Labs/MIT team's system"
         },
         {
           "talkname": "DSAA Conference",
           "location": "Montreal, Canada",
           "date": "2016",
-          "image": "dsaa2016.jpg",
+          "image": "/dsaa2016.jpg",
           "description": "Presented conference paper"
         },
         {
           "talkname": "DSAA Conference",
           "location": "Paris, France",
           "date": "2015",
-          "image": "dsaa2015.jpg",
+          "image": "/dsaa2015.jpg",
           "description": "Presented conference paper"
         },
         {
           "talkname": "IWBDA",
           "location": "Boston, MA",
           "date": "2014",
-          "image": "iwbda2014.png",
+          "image": "/iwbda2014.png",
           "description": "Presented workshop paper"
         }]
     },
@@ -478,16 +478,21 @@
         {
           "name": "Languages/Technologies",
           "listing": [
-              "Python (expert)",
+              "Python",
               "C/C++",
               "Javascript",
               "Julia",
               "Ruby",
+              "Pandas",
+              "Scikit-Learn",
+              "Tensor Flow",
+              "Dask",
               "AWS",
               "SQL",
               "MongoDB",
               "Node.js",
-              "Unix/Linux"
+              "Unix/Linux",
+              "Docker"
           ]
         },
 
@@ -562,21 +567,21 @@
     { "name": "Experience (Non-Technical)", "url": "/non-technical-experience", "visible": true,
       "items": [{
           "name": "10-day Vipassana Retreat",
-          "image": "vipassana.png",
+          "image": "/vipassana.png",
           "date": "October 2018",
           "location": "Yangon, Myanmar",
           "description": "Totally silent, 11 hours of meditation each day. Profound insights and 'ego-less' experiences. Mixed reviews about Vipassana as its organized and as a technique/philosophy: blog post coming shortly."
         },
         {
           "name": "Zen YMJJ Retreats",
-          "image": "kwanum.jpeg",
+          "image": "/kwanum.jpeg",
           "date": "Several since 2016",
           "location": "",
           "description": "Silent Buddhist retreats in the Korean Kwan Um Zen tradition. Deep discoveries about myself, the mind, the world, and the nature of knowledge. The Way/path/process is (always) ongoing. Ask me more if you're curious."
         },
         {
           "name": "National Outdoor Leadership School",
-          "image": "nols.png",
+          "image": "/nols.png",
           "date": "Summer 2009",
           "location": "Wind River Range, WY",
           "description": "30 day backpacking trip in extremely remote part of the Rockies. No trails, navigated using topo maps. Carried food for 10 days and met twice at planned sites for food rerations."
@@ -585,29 +590,29 @@
     { "name": "Awards (Technical)", "url": "/technical-awards", "visible": true,
       "items": [{
           "name": "2014 MIT EECS Northern Telecom/BNR Project Award for Best Undergraduate Laboratory Project",
-          "image": "eecs.png",
+          "image": "/eecs.png",
           "for": "6.111 Final Project: Gesture Controlled Drone"
         },
         {
           "name": "2017 AI Grant Finalist",
-          "image": "aigrant.png",
+          "image": "/aigrant.png",
           "for": "Lil Neuron"
         }]
     },
     { "name": "Awards (Non-Technical)", "url": "/non-technical-awards", "visible": true,
       "items": [{
           "name": "2014 CoSida Academic All-American",
-          "image": "cosida.jpg",
+          "image": "/cosida.jpg",
           "description": "FIND MORE INFO ON THIS"
         },
         {
           "name": "2014 NCAA Outdoor Track & Field All-American",
-          "image": "ncaa.png",
+          "image": "/ncaa.png",
           "description": "Placed in top 8 in the pole vault at NCAA D3 indoor nationals"
         },
         {
           "name": "2014 NCAA Indoor Track & Field All-American",
-          "image": "ncaa.png",
+          "image": "/ncaa.png",
           "description": "Placed in top 8 in the pole vault at NCAA D3 outdoor nationals"
         }]
     },

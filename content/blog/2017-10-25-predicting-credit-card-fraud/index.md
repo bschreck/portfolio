@@ -3,7 +3,7 @@ state:        post
 title:        Applying Data Science Automation to Better Predict Credit Card Fraud
 date:         2017-10-25 12:00:00 -08:00
 redirect_url: https://www.featurelabs.com/blog/predicting-credit-card-fraud/
-image:        featurelabs-logo.jpg
+image:        /featurelabs-logo.jpg
 ---
 
 ## Applying Data Science Automation to Better Predict Credit Card Fraud
